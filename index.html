@@ -33,6 +33,31 @@
     color: #555;
     margin: 8px 16px 0;
   }
+
+  .status-bar {
+    max-width: 640px;
+    margin: 16px auto 0;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+  }
+
+  .how-to-use {
+    max-width: 640px;
+    margin: 12px auto 0;
+    padding: 12px 16px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #444;
+  }
+  .how-to-use h2 {
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
+
   .intro {
     max-width: 640px;
     margin: 20px auto;
@@ -42,10 +67,11 @@
     color: #333;
     text-align: justify;
   }
+
   .card-grid {
     max-width: 900px;
     margin: 0 auto;
-    padding: 8px 16px 40px;
+    padding: 8px 16px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
@@ -105,6 +131,54 @@
     background: #eee;
     color: #777;
   }
+
+  .accessibility-note {
+    max-width: 640px;
+    margin: 4px auto 20px;
+    padding: 12px 16px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #555;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  .accessibility-note h2 {
+    font-size: 13px;
+    margin: 0 0 6px;
+    color: #333;
+  }
+
+  .research-links {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 16px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .research-links a {
+    color: #cc5500;
+  }
+
+  .qr-section {
+    max-width: 300px;
+    margin: 8px auto 24px;
+    padding: 16px;
+    text-align: center;
+  }
+  .qr-section img {
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin: 0 auto 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+  .qr-section p {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+  }
+
   footer {
     padding: 16px;
     font-size: 11px;
@@ -123,6 +197,23 @@
   <p>Select a condition or procedure below to explore an interactive 3D and AR model accompanied by information on each.</p>
 </header>
 
+<!-- STATUS BAR — update the count as more models go live -->
+<div class="status-bar">
+  1 of 6 models currently available · Last updated: [Month Year]
+</div>
+
+<!-- HOW TO USE THIS SITE — short orientation blurb for first-time visitors -->
+<div class="how-to-use">
+  <h2>How to use this site:</h2>
+  <p>
+    Tap or click a card below to open an interactive 3D model for that
+    condition or procedure. Each page lets you rotate and explore the
+    model in your browser, and — on a compatible phone or tablet — place
+    a life-sized version in the room with you using augmented reality
+    (AR). Cards marked "Coming soon" are still in development.
+  </p>
+</div>
+
 <div class="intro">
   This resource is part of the research project <em>"The Use of 3D
   Printed and Augmented Reality Models as Educational Aids in Cleft
@@ -139,11 +230,20 @@
     the href, icon, title, description, and badge.
   -->
 
-  <a class="card" href="#" target="_blank" rel="noopener">
+  <a class="card disabled" href="#">
     <div class="card-icon">👄</div>
     <div class="card-body">
       <h2>Cleft Lip</h2>
       <p>Interactive 3D model showing unilateral and bilateral cleft lip anatomy.</p>
+      <span class="badge soon">Coming soon</span>
+    </div>
+  </a>
+
+  <a class="card disabled" href="#">
+    <div class="card-icon">🦷</div>
+    <div class="card-body">
+      <h2>Cleft Lip and Alveolus</h2>
+      <p>Interactive 3D model showing cleft lip with involvement of the alveolar ridge.</p>
       <span class="badge soon">Coming soon</span>
     </div>
   </a>
@@ -158,14 +258,61 @@
   </a>
 
   <a class="card disabled" href="#">
-    <div class="card-icon">🦷</div>
+    <div class="card-icon">👄🦴</div>
     <div class="card-body">
-      <h2>Alveolar Bone Grafting</h2>
+      <h2>Cleft Lip and Palate</h2>
+      <p>Interactive 3D model showing combined unilateral cleft lip and palate anatomy.</p>
+      <span class="badge soon">Coming soon</span>
+    </div>
+  </a>
+
+  <a class="card disabled" href="#">
+    <div class="card-icon">🦴🦴</div>
+    <div class="card-body">
+      <h2>Bilateral Cleft Lip and Palate</h2>
+      <p>Interactive 3D model showing cleft lip and palate affecting both sides.</p>
+      <span class="badge soon">Coming soon</span>
+    </div>
+  </a>
+
+  <a class="card disabled" href="#">
+    <div class="card-icon">🛠️</div>
+    <div class="card-body">
+      <h2>Alveolar Bone Grafting Surgery</h2>
       <p>Interactive 3D model showing alveolar bone graft anatomy and repair.</p>
       <span class="badge soon">Coming soon</span>
     </div>
   </a>
 
+</div>
+
+<!-- ACCESSIBILITY / LANGUAGE NOTE -->
+<div class="accessibility-note">
+  <h2>Accessibility:</h2>
+  <p>
+    Viewing a 3D model requires a modern web browser. The augmented
+    reality (AR) feature requires a smartphone or tablet with a camera —
+    on a desktop or laptop computer you can still view and rotate the
+    model, but AR placement will not be available. If English is not
+    your first language and you would like this information in another
+    format, please [PLACEHOLDER — add contact details or translation
+    instructions here].
+  </p>
+</div>
+
+<!-- RESEARCH PROJECT LINKS — participant information / consent, etc. -->
+<div class="research-links">
+  <a href="#" target="_blank" rel="noopener">Participant information and consent</a>
+  &nbsp;·&nbsp;
+  <a href="#" target="_blank" rel="noopener">Contact the research team</a>
+</div>
+
+<!-- QR CODE — generate this once your final URL is live (see chat for
+     instructions), save it as hub-qr-code.png, and upload it alongside
+     this file -->
+<div class="qr-section">
+  <img src="cleft-lip-and-palate-models-QR-code.png" alt="QR code linking to this page">
+  <p>Scan to open this page on your phone</p>
 </div>
 
 <footer>
